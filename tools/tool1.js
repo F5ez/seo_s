@@ -4,6 +4,7 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 
     function resetStats() {
+
         const statsValues = document.querySelectorAll('.stats .value');
         statsValues.forEach(val => val.textContent = '0');
 
@@ -114,18 +115,19 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     function updateStats() {
-        const text = quill.getText().trim();
+        const rawText = quill.getText();
+        const text = rawText.replace(/\n$/, '');
 
-        if (!text) {
+        if (!text.trim()) {
             resetStats();
             return;
         }
 
         const cleanedText = text.replace(/\s+([.,!?;:])/g, '$1');
-
         const allWords = cleanedText.split(/\s+/).filter(Boolean);
         const wordCount = allWords.length;
         const charsNoSpaces = cleanedText.replace(/\s/g, '').length;
+        const charsWithSpaces = cleanedText.length;
 
         const sentenceRegex = /[^.!?]+[.!?]+/g;
         const matchedSentences = [...(cleanedText.match(sentenceRegex) || [])].map(s => s.trim());
@@ -143,11 +145,12 @@ window.addEventListener('DOMContentLoaded', () => {
             : 0;
 
         const statsValues = document.querySelectorAll('.stats .value');
-        if (statsValues.length >= 4) {
+        if (statsValues.length >= 5) {
             statsValues[0].textContent = wordCount;
             statsValues[1].textContent = charsNoSpaces;
-            statsValues[2].textContent = sentenceCount;
-            statsValues[3].textContent = avgSentenceLength;
+            statsValues[2].textContent = charsWithSpaces;
+            statsValues[3].textContent = sentenceCount;
+            statsValues[4].textContent = avgSentenceLength;
         }
 
         updateKeywordDensity(allWords);

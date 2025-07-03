@@ -154,9 +154,10 @@ main{
     display: flex;
     flex-basis: 100%;
     flex-wrap: wrap;
-    justify-content: space-between;
+    text-align: center;
+    justify-content: center;
     align-content: center;
-    height: 25%;
+    height: 20%;
 }
 .stats {
     border-bottom: 1px solid #ccc;
@@ -180,7 +181,6 @@ main{
 .label_2{
     flex-basis: 100%;
     text-align: center;
-    justify-items: center;
     font-size: clamp(1rem, 1.7vw, 2rem);
 
 }
@@ -234,7 +234,7 @@ main{
         height: 50%;
     }
     .stats{
-        flex-basis: 50%;
+        flex-basis: 30%;
         display: flex;
         margin:0;
         border-bottom: 2px solid #ccc;
@@ -261,4 +261,35 @@ main{
     }
 }
 
-
+@media screen and (max-width: 340px) {
+    .tool_count_1{
+        justify-content: space-between;
+        height: 20%;
+    }
+    .stats{
+        height: 50%;
+    }
+    .label_2 {
+        font-size: 0.5rem;
+    }
+    .label {
+        font-size: 0.5rem !important;
+    }
+    .value {
+        font-size: 0.5rem !important;
+    }
+    .value2_words,value2_count{
+        font-size: 0.8rem
+    }
+    .stats2{
+        flex-basis: 45%;
+        margin-top: 3vh;
+    }
+    .tool-block_text{
+        font-size: 0.5rem;
+    }
+    .editor{
+        height: 100px;
+        margin-bottom:4vh;
+    }
+}
