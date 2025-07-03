@@ -34,7 +34,7 @@ body{
     align-items: center;
     flex-basis: 10%;
     font-size: clamp(1.2rem, 2.5vw, 3rem);
-    font-family: "Times", cursive ;
+    font-family: "Libre Franklin", sans-serif;
     text-wrap: nowrap;
 
 }
@@ -58,7 +58,7 @@ body{
     padding: 6px 12px;
     border-radius: 5px;
     transition: background-color 0.3s, color 0.3s;
-    font-family: "Times", cursive ;
+    font-family: "Libre Franklin", sans-serif;
 
 }
 .nav a:hover {
@@ -113,6 +113,8 @@ main{
     margin-bottom: 4vh;
     justify-content: center;
     text-align: center;
+    font-family: "Libre Franklin", sans-serif;
+
 
 
 }
@@ -126,6 +128,8 @@ main{
     font-size: clamp(0.7rem, 1.4vw, 1.7rem);
 }
 .tool-block-result{
+    font-family: "Libre Franklin", sans-serif;
+
     display: flex;
     margin-top: 5vh;
     flex-basis: 100%;
