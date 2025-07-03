@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+
+
 
     <title>Title</title>
     <link rel="stylesheet" href="tool1.css">
@@ -21,6 +24,78 @@
               <a href="">Home</a>
       </nav>
   </header>
+
+    <main>
+
+        <div class="ad-left">
+            <img src="/img/robot.png" alt="">
+        </div>
+        <div class="tool-block">
+            <div class="tool-block_text">
+                Simple and free text analyzer tool for counting words, sentences, and measuring word frequency, density, and sentence length. Perfect for writers, SEO specialists, and content creators.
+            </div>
+            <div class="editor">
+            <div id="editor"></div>
+            </div>
+        <div class="tool-block-result">
+            <div class="tool_count_1">
+                <div class="stats">
+                    <span class="value">0</span>
+                    <span class="label">Word count</span>
+                </div>
+                <div class="stats">
+                    <span class="value">0</span>
+                    <span class="label">Characters without spaces</span>
+                </div>
+                <div class="stats">
+                    <span class="value">0</span>
+                    <span class="label">Total Sentences</span>
+                </div>
+                <div class="stats">
+                    <span class="value">0</span>
+                    <span class="label">Average Sentence Length</span>
+                </div>
+            </div>
+                <div class="stats2" id="kd">
+                    <div class="label_2">Keyword Density</div>
+                    <div class="value2">
+                        <div class="value2_words">-</div>
+                        <div class="value2_count">0%</div>
+                    </div>
+
+
+
+
+                </div>
+            <div class="stats2" id="tuw">
+                <div class="label_2">Top Used Words</div>
+                <div class="value2">
+                    <div class="value2_words">-</div>
+                    <div class="value2_count">0%</div>
+                </div>
+
+
+
+            </div>
+        </div>
+        </div>
+
+        <div class="ad-right">
+
+            <img src="/img/robot.png" alt="">
+
+        </div>
+
+
+
+    </main>
+
+
+
+
+
+
+
 </div>
 
 
@@ -28,4 +103,7 @@
 
 
 </body>
-</html>A
+<script src="tool1.js"></script>
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+
+</html>
