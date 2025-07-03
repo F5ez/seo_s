@@ -282,7 +282,7 @@ main{
         font-size: 0.8rem
     }
     .stats2{
-        flex-basis: 45%;
+        flex-basis: 50%;
         margin-top: 3vh;
     }
     .tool-block_text{
@@ -290,6 +290,6 @@ main{
     }
     .editor{
         height: 80px;
-        margin-bottom:4vh;
+        margin-bottom:10vh;
     }
 }
