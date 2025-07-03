@@ -154,7 +154,7 @@ main{
     display: flex;
     flex-basis: 100%;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
     align-content: center;
     height: 25%;
 }
@@ -195,7 +195,7 @@ main{
 .value2{
     display: flex;
     flex-wrap: nowrap;
-    justify-content:space-around ;
+    justify-content:space-between ;
     flex-basis: 100%;
     font-size: clamp(0.7rem, 1.4vw, 1.6rem);
     background-color: #f1f1f1;
@@ -204,6 +204,12 @@ main{
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 
+}
+.value2_words{
+    margin-left: 1vw;
+}
+.value2_count{
+    margin-right: 1vw;
 }
 /* 1. Планшеты и средние экраны */
 @media screen and (max-width: 1024px) {
