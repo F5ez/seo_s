@@ -264,7 +264,7 @@ main{
 @media screen and (max-width: 340px) {
     .tool_count_1{
         justify-content: space-between;
-        height: 20%;
+        height: 30%;
     }
     .stats{
         height: 50%;
