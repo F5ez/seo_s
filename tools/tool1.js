@@ -1,10 +1,7 @@
 window.addEventListener('DOMContentLoaded', () => {
-    const quill = new Quill('#editor', {
-        theme: 'snow'
-    });
+    const textArea = document.getElementById('customTextInput');
 
     function resetStats() {
-
         const statsValues = document.querySelectorAll('.stats .value');
         statsValues.forEach(val => val.textContent = '0');
 
@@ -20,6 +17,7 @@ window.addEventListener('DOMContentLoaded', () => {
         row.className = 'value2';
 
         const wordDiv = document.createElement('div');
+
         wordDiv.className = 'value2_words';
         wordDiv.textContent = '-';
 
@@ -115,8 +113,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     function updateStats() {
-        const rawText = quill.getText();
-        const text = rawText.replace(/\n$/, '');
+        const text = textArea.value || '';
 
         if (!text.trim()) {
             resetStats();
@@ -157,5 +154,5 @@ window.addEventListener('DOMContentLoaded', () => {
         updateTopUsedWords(allWords);
     }
 
-    quill.on('text-change', updateStats);
+    textArea.addEventListener('input', updateStats);
 });

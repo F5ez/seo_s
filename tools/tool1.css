@@ -1,22 +1,31 @@
 body{
     margin: 0;
     padding: 0;
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    background-color: #EFEAE4;
 }
 .wrap{
     display: flex;
     width: 100vw;
     height: 100vh;
+    max-width: 100vw;
+    max-height: 100vh;
     flex-wrap: wrap;
+    background-color: #EFEAE4;
+    overflow: hidden;
+
 }
 .header{
     flex-basis: 100%;
     display: flex;
-    height: 10vh;
+    height: 80px;
+    max-height: 80px;
+    align-content: center;
     justify-content: flex-start;
     gap: 2vw;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    background-color: white;
     z-index: 10;
+    padding: 16px 0;
 }
 .logo{
     flex-basis: 10%;
@@ -69,75 +78,74 @@ body{
 .nav a:visited {
     color: inherit;
 }
-.value2_words {
-    word-break: break-word;
-    overflow-wrap: anywhere;
-    white-space: normal;
-    max-width: 100%;
-    max-height: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
 
 main{
     display: flex;
     flex-basis: 100%;
-    height: 89vh;
+    height: 90vh;
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
 }
-.ad-left,.ad-right{
+.tool_block_result_s{
     display: flex;
-    flex-basis: 10vw;
-    height: 80vh;
-}
-.ad-left img,.ad-right img{
+    flex-wrap: wrap;
+    flex-basis: 44.7%;
     height: 100%;
-    width: 100%;
-    object-fit: cover;
+    justify-content: center;
+    align-content: flex-start;
+    background-color: #EFEAE4;
+    color:#333;
 
 }
 .tool-block{
     display: flex;
     flex-wrap: wrap;
-    height: 80vh;
-    flex-basis: 70vw;
+    height: 100vh;
+    flex-basis: 100%;
     align-content:flex-start;
+    justify-content: center;
 }
 .tool-block_text{
     display: flex;
     word-wrap: break-word;
-    font-size: clamp(0.5rem, 1.2vw, 2.5rem);
-    flex-basis: 100%;
-    margin-bottom: 4vh;
+    font-size: 10px;
     justify-content: center;
+    align-content: center;
+    flex-basis: 100%;
     text-align: center;
     font-family: "Libre Franklin", sans-serif;
 
 
 
 }
-.editor{
-    flex-basis: 100%;
-    max-width: 70vw;
-    height:20vh;
+.toll_block_word{
+    display: flex;
+    flex-basis: 55%;
+    height: 100%;
 
 }
-.ql-editor{
-    font-size: clamp(0.7rem, 1.4vw, 1.7rem);
+#customTextInput {
+    width: 100%;
+    height: 100%;
+    border: none;
+    resize: none;
+    padding: 20px;
+    font-size: 1.2rem;
+    font-family: "Libre Franklin", sans-serif;
+    outline: none;
+    box-sizing: border-box;
+    color:#333;
+    background-color: #F9F5F0;
 }
+
 .tool-block-result{
     font-family: "Libre Franklin", sans-serif;
-
     display: flex;
     margin-top: 5vh;
     flex-basis: 100%;
-    height: 45vh;
+    height: 85vh;
     flex-wrap: nowrap;
-    border: 1px solid rgba(0, 0, 0, 0.4);
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 
 
 
@@ -145,10 +153,11 @@ main{
 .tool_count_1{
     display: flex;
     flex-wrap: wrap;
-    flex-basis: 40%;
-    height: 100%;
+    flex-basis: 100%;
+    height: 30%;
     justify-content: center;
     align-content:flex-start;
+    background-color: #EFEAE4;
 }
 .stats{
     display: flex;
@@ -157,25 +166,33 @@ main{
     text-align: center;
     justify-content: center;
     align-content: center;
-    height: 20%;
-}
-.stats {
-    border-bottom: 1px solid #ccc;
-    margin: 0 10%; /* создаёт "пустоту по краям" */
+    height: 33%;
+
+    background-color: #EFEAE4;
+    border-radius: 10px;
+    box-shadow: inset 2px 2px 5px #d1ccc4, inset -2px -2px 5px #ffffff;
+    transition: all 0.1s ease-in-out;
+
 }
 
-.stats:last-child {
-    border-bottom: none;
+
+
+.count_s,.count_ns,.count_ts,.count_asl{
+    flex-basis: 50%;
 }
+
+
 .value{
     display: flex;
-    font-size: clamp(1.2rem, 2.5vw, 3rem);
+    font-size: clamp(18px, 25px, 2rem);
+    line-height: 1.5;
     justify-content: center;
     flex-basis: 100%;
 
 }
 .label{
-    font-size: clamp(1rem, 1.7vw, 2rem);
+    font-size: clamp(18px, 25px, 2rem);
+    line-height: 1.5;
 }
 
 .label_2{
@@ -187,109 +204,149 @@ main{
 .stats2,.stats3{
     display: flex;
     flex-wrap: wrap;
-    flex-basis: 30%;
+    flex-basis: 50%;
     justify-content: center;
     align-content: flex-start;
     height: 100%;
+    max-width: 50%;
+}
+.tool_count_stats{
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 100%;
+    height: 69%;
+    margin-top: 3vh;
+
 }
 .value2{
+    margin-top: 0.2vh;
     display: flex;
     flex-wrap: nowrap;
     justify-content:space-between ;
     flex-basis: 100%;
-    font-size: clamp(0.7rem, 1.4vw, 1.6rem);
+    font-size: 15px;
     background-color: #f1f1f1;
-    height: 9.2%;
+    height: 8%;
+    border:1px solid #ddc3b5;
     align-items: center;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 
 }
-.value2_words{
+.value2_words {
     margin-left: 1vw;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex-basis: 70%;
+    max-width: 15vw;
+
+
 }
 .value2_count{
-    margin-right: 1vw;
+
+    margin-right: 2vw;
 }
-/* 1. Планшеты и средние экраны */
+
+@media screen and (max-width: 1500px) {
+    .label{
+        font-size: 17px;
+    }
+
+}
 @media screen and (max-width: 1024px) {
-    /* Уменьшаем шрифты, адаптируем ширину контейнеров */
+    .label{
+        font-size: 15px;
+    }
+    .label_2{
+        white-space: nowrap;
+    }
+    .value2_words{
+        width: 120px;
+    }
+    h1{
+        font-size: 13px;
+    }
+
 }
 
 /* 2. Мобильные устройства */
 @media screen and (max-width: 768px) {
-    .tool-block_text{
-        font-size: clamp(1rem, 1.7vw, 2rem);
+    .label_2{
+        font-size: 12px;
     }
-    .tool-block-result{
-        flex-wrap: wrap;
-        overflow: scroll;
+    .value2{
+        height: 8% !important;
+    }
+
+}
+
+
+@media screen and (max-width: 530px) {
+    .stats{
+        flex-basis: 100%;
+        height: 20%;
 
     }
     .tool_count_1{
-        flex-basis: 100%;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-content: flex-start;
         height: 50%;
-    }
-    .stats{
-        flex-basis: 30%;
-        display: flex;
-        margin:0;
-        border-bottom: 2px solid #ccc;
-        height: 50%;
-    }
-    .stats:last-child {
-        border-bottom: 2px solid #ccc;
-    }
-    .stats2{
-        flex-basis: 50%;
-        margin-top: 1vh;
-    }
-}
-@media screen and (max-width: 530px) {
-    .tool-block_text{
-        font-size: clamp(0.8rem, 1.3vw, 1rem);
-    }
-    .tool-block-result{
-        margin-top: 10vh;
     }
     .label{
-        font-size: clamp(0.8rem, 1.2vw, 1rem);
-        text-align: center;
+        font-size: 10px
+    }
+    .value{
+        font-size: 13px;
+    }
+    .tool_count_stats{
+        height: 50%;
+    }
+    .tool-block_text{
+        margin-top:3vh;
+
+    }
+    .tool-block-result{
+        height: 80%;
+    }
+    h1{
+        font-size: 11px;
+    }
+      .value2{
+        height: 7% !important;
+    }
+    .value2_words,.value2_count{
+        font-size: 12px;
+    }
+    #customTextInput{
+        font-size: 12px;
+    }
+
+
+}
+
+@media screen and (max-width: 430px) {
+    .tool_block_result_s{
+        flex-basis: 100%;
+    }
+    .tool-block-result{
+        flex-wrap: wrap;
+    }
+    .tool-block_text{
+        margin: 0;
+
+    }
+    .toll_block_word{
+        height: 50%;
+        flex-basis: 100%;
+    }
+    .tool_block_result_s{
+        flex-wrap: nowrap;
+    }
+    .tool_count_1{
+        flex-basis: 50%;
+    }
+    .tool_count_stats{
+        align-items: flex-start;
+        margin: 0;
     }
 }
 
-@media screen and (max-width: 340px) {
-    .tool_count_1{
-        justify-content: space-between;
-        height: 30%;
-    }
-    .stats{
-        height: 50%;
-    }
-    .label_2 {
-        font-size: 0.5rem;
-    }
-    .label {
-        font-size: 0.5rem !important;
-    }
-    .value {
-        font-size: 0.5rem !important;
-    }
-    .value2_words,value2_count{
-        font-size: 0.8rem
-    }
-    .stats2{
-        flex-basis: 50%;
-        margin-top: 3vh;
-    }
-    .tool-block_text{
-        font-size: 0.5rem;
-    }
-    .editor{
-        height: 80px;
-        margin-bottom:10vh;
-    }
-}
