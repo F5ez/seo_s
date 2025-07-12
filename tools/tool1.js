@@ -126,16 +126,19 @@ window.addEventListener('DOMContentLoaded', () => {
         const charsNoSpaces = cleanedText.replace(/\s/g, '').length;
         const charsWithSpaces = cleanedText.length;
 
-        const sentenceRegex = /[^.!?]+[.!?]+/g;
-        const matchedSentences = [...(cleanedText.match(sentenceRegex) || [])].map(s => s.trim());
+        const sentenceRegex = /[^.!?]+(?:[.!?]+(?=\s|$)|$)/g;
+        const matchedSentences = (cleanedText.match(sentenceRegex) || [])
+            .map(s => s.trim())
+            .filter(Boolean);
+
+// Подсчет количества предложений
         const sentenceCount = matchedSentences.length;
 
-        const textUpToLastSentence = matchedSentences.join(' ');
-        const wordsInSentences = textUpToLastSentence
-            .split(/\s+/)
+// Общее количество слов в предложениях
+        const sentenceWordsCount = matchedSentences
+            .flatMap(s => s.split(/\s+/))
             .map(w => w.trim())
-            .filter(Boolean);
-        const sentenceWordsCount = wordsInSentences.length;
+            .filter(Boolean).length;
 
         const avgSentenceLength = sentenceCount > 0
             ? Math.round(sentenceWordsCount / sentenceCount)
